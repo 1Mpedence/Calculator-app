@@ -1,0 +1,213 @@
+:root{
+    --white: hsl(0, 0, 100%);
+}
+
+.theme-1{
+    --main-background: hsl(222, 26%, 31%);
+    --keypad-background: hsl(223, 31%, 20%);
+    --screen-background: hsl(224, 36%, 15%);
+
+    --key-background: hsl(225, 21%, 49%);
+    --key-shadow: hsl(224, 28%, 35%);
+    --key-background-submit: hsl(6, 63%, 50%);
+    --key-shadow-submit: hsl(6, 70%, 34%);
+    --key-background-number: hsl(30, 25%, 89%);
+    --key-shadow-number: hsl(28, 16%, 65%);
+    --text: hsl(221, 14%, 31%);
+    --title: hsl(0, 0%, 100%);   
+    --submit: hsl(0, 0%, 100%); 
+}
+.theme-2{
+    --main-background: hsl(0, 0%, 90%);
+    --keypad-background: hsl(0, 5%, 81%);
+    --screen-background: hsl(0, 0%, 93%);
+
+    --key-background: hsl(185, 42%, 37%);
+    --key-shadow: hsl(185, 58%, 25%);
+    --key-background-submit: hsl(25, 98%, 40%);
+    --key-shadow-submit: hsl(25, 99%, 27%);
+    --key-background-number: hsl(45, 7%, 89%);
+    --key-shadow-number: hsl(35, 11%, 61%);
+    --text: hsl(60, 10%, 19%);
+    --title: hsl(60, 10%, 19%);
+    --submit: hsl(0, 0%, 100%);
+}
+.theme-3{
+    --main-background: hsl(268, 75%, 9%);
+    --keypad-background: hsl(268, 71%, 12%);
+    --screen-background: hsl(268, 71%, 12%);
+
+    --key-background: hsl(281, 89%, 26%);
+    --key-shadow: hsl(285, 91%, 52%);
+    --key-background-submit: hsl(176, 100%, 44%);
+    --key-shadow-submit: hsl(177, 92%, 70%);
+    --key-background-number: hsl(268, 47%, 21%);
+    --key-shadow-number: hsl(290, 70%, 36%);
+    --text: hsl(52, 100%, 62%);
+    --title: hsl(52, 100%, 62%);
+    --submit: hsl(0, 0%, 0%);
+}
+.theme1, 
+.theme2,
+.theme3{
+    position: relative;
+}
+
+*,
+*:before,
+*:after{
+    font-family: Spartan;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{    
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: var(--main-background);
+    position: relative;
+}
+
+h1{
+    font-size: 2em;
+}
+
+.title{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr) auto;
+    grid-template-rows: 1fr;
+    color: var(--title);
+    font-size: 0.7em;
+    align-items: end;
+}
+
+.theme{    
+    align-self: end;
+    justify-self: end;
+    margin-right: 1em;
+    text-transform: uppercase;
+}
+
+.calculator{
+    width: 85vw;
+    max-width: 400px;
+}
+
+.theme-selector{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: max-content;
+}
+
+.theme-label{
+    padding: 0 0.2em;
+    display: flex;
+    justify-content: space-around;
+}
+
+.theme-btn-grp{
+    background: var(--screen-background);
+    border-radius: 1em; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0.2em;
+}
+
+input[type="radio"]{
+    width: 1em;
+    height: 1em;
+    border-radius: 50%;
+    background: transparent;
+    border: none;
+    outline: none;
+    transform: scale(0.7);
+    appearance: none;
+}
+input[type="radio"]:checked { 
+    background:var(--key-background-submit);
+}
+
+.input{
+    border: none;
+    outline: none;
+    margin: 0.5em 0;
+    width: 100%;
+    padding: 0.75em;
+    background: var(--screen-background);
+    text-align: right;
+    font-size: 2em;
+    color: var(--title);
+}
+
+.keypad{
+    padding: 1em;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(5, 3em);
+    gap: 1em;
+    background: var(--keypad-background);
+}
+
+.input,
+.keypad{
+    border-radius: 1vh;
+}
+
+.keypad button{
+    border-radius: 1vh;
+    border: none;
+    outline: none;
+    color: var(--text);
+    background: var(--key-background-number);
+    box-shadow: 0 2px var(--key-shadow-number);
+    font-size: 25px;
+    font-weight: 700;
+    transition: transform 200ms ease-in-out;
+}
+.keypad button:active{
+    transform: scale(0.9);
+}
+button[type="submit"]{
+    background: var(--key-background-submit);
+    box-shadow: 0 2px var(--key-shadow-submit);
+    grid-column: 3 / 5;
+    color: var(--submit);
+}
+
+button[type="reset"],
+button[value="delete"]{
+    background: var(--key-background);
+    box-shadow: 0 2px var(--key-shadow);
+}
+button[type="reset"]{
+    grid-column: 1 / 3;
+}
+button[type="submit"],
+button[type="reset"],
+button[value="delete"]{
+    font-size: 1em;
+    font-weight: normal;
+    text-transform: uppercase;
+}
+button[type="reset"],
+button[value="delete"]{
+    color: white;
+}
+
+footer{
+    position: absolute;
+    left: 0;
+    bottom: 0;
+}
+.attribution { 
+    font-size: 11px; 
+    text-align: center; 
+}
+.attribution a { 
+    color: hsl(228, 45%, 44%); 
+}

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link href="https://fonts.googleapis.com/css2?family=Spartan:wght@700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <title>Frontend Mentor | Calculator app</title>
+
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <style>
+    
+  </style>
+</head>
+<body class="theme-1">
+
+  <main class="calculator">
+    <div class="title">
+      <h1>calc</h1>
+      <div class="theme">theme</div>
+      <div class="theme-selector">
+        <div class="theme-label">
+          <label for="theme1">1</label>
+          <label for="theme2">2</label>
+          <label for="theme3">3</label>
+        </div>
+        <div class="theme-btn-grp">
+          <input type=radio class="theme1" id="theme1" value="theme1" name="radios" checked></input>
+          <input type=radio class="theme2" id="theme2" value="theme2" name="radios"></input>
+          <input type=radio class="theme3" id="theme3" value="theme3" name="radios"></input>
+        </div>
+      </div>
+    </div>
+    <form onkeypress="return event.keyCode != 13">
+      <input type="text" class="input">
+    </form>
+    <div class="keypad">
+      <button value="7" class="number key">7</button>
+      <button value="8" class="number key">8</button>
+      <button value="9" class="number key">9</button>
+      <button value="delete" class="delete">del</button>
+      <button value="4" class="number key">4</button>
+      <button value="5" class="number key">5</button>
+      <button value="6" class="number key">6</button>
+      <button value="+" class="opt key">+</button>
+      <button value="1" class="number key">1</button>
+      <button value="2" class="number key">2</button>
+      <button value="3" class="number key">3</button>
+      <button value="-" class="opt key">-</button>
+      <button value="." class="key">.</button>
+      <button value="0" class="key">0</button>
+      <button value="/" class="opt key">/</button>
+      <button value="*" class="opt key">X</button>
+      <button type="reset" class="reset">reset</button>
+      <button type="submit" class="submit">=</button>
+    </div>
+  </main>
+  
+  <footer>
+    <div class="attribution">
+      Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+      Coded by <a href="https://www.frontendmentor.io/profile/1Mpedence" target="_blank">Harsh Anand</a>.
+    </div>
+  </footer>
+  <script src="script-theme.js"></script>
+  <script src="script-calc.js"></script>
+</body>
+</html>
